@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuctionSphere | Admin Control</title>
+    <link rel="stylesheet" href="style.css"><head>
+</head>
+<body>
+  <div class="container"> <header>
+            <h1>Admin Control Center</h1>
+            <div class="stats-bar">
+                <div class="stat-card">Total Items: <span id="count">0</span></div>
+                <button class="btn logout-btn" onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <div class="card">
+            <h3>🔨 Create New Listing</h3>
+            <div class="admin-form">
+                <input type="text" id="itemName" placeholder="Item Name">
+                <input type="number" id="startPrice" placeholder="Starting Price ($)">
+                <button class="btn btn-success" onclick="createAuction()">Post Live</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>📦 Active Inventory</h3>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Current Bid</th>
+                        <th>Highest Bidder</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="admin-inventory">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

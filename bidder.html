@@ -1,0 +1,44 @@
+<h2>Bidder Panel</h2>
+
+<ul id="items"></ul>
+
+<script>
+fetch("/items")
+  .then(res => res.json())
+  .then(data => {
+    items.innerHTML = data.map(item => `
+      <li>
+        ${item.name} - ₹${item.highestBid}
+        <input id="bid${item.id}" placeholder="Bid">
+        <button onclick="placeBid(${item.id})">Bid</button>
+
+        <input id="auto${item.id}" placeholder="Max Auto Bid">
+        <button onclick="autoBid(${item.id})">Auto Bid</button>
+      </li>
+    `).join("");
+  });
+
+function placeBid(id) {
+  fetch("/bid", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({
+      itemId: id,
+      bidAmount: document.getElementById("bid"+id).value,
+      bidder: "User"
+    })
+  }).then(res => res.text()).then(alert);
+}
+
+function autoBid(id) {
+  fetch("/autobid", {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({
+      itemId: id,
+      maxBid: document.getElementById("auto"+id).value,
+      bidder: "User"
+    })
+  }).then(res => res.text()).then(alert);
+}
+</script>

@@ -1,0 +1,122 @@
+/* Custom Variables for easy branding */
+:root {
+  --primary-color: #2c3e50;    /* Professional Navy */
+  --accent-color: #f39c12;     /* Auction Gold */
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --text-main: #333;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 450px; /* Centers and limits the width */
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Card Styling */
+.card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 25px;
+  border-top: 5px solid var(--accent-color); /* Adds a "pop" of color */
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Form Grouping */
+.form-group {
+  margin-bottom: 15px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box; /* Ensures padding doesn't break width */
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(243, 156, 18, 0.2);
+}
+
+/* Button Styling */
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #34495e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Decorative/Utility Text */
+.switch-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-top: 15px;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 40px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  body {
+    padding: 20px 10px;
+  }
+}
