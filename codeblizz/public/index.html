@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuctionSphere | Secure Login & Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Online Auction System</h1>
+        <p>Bid high, win big.</p>
+    </header>
+
+    <main>
+        <section class="card" id="login-section">
+            <h2>Welcome Back</h2>
+            <form onsubmit="event.preventDefault(); login();">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input id="username" type="text" placeholder="Enter Username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" placeholder="Enter Password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p class="switch-text">New here? <a href="#register-section">Create an account</a></p>
+        </section>
+
+        <hr class="divider">
+
+        <section class="card" id="register-section">
+            <h2>Create Account</h2>
+            <form onsubmit="event.preventDefault(); register();">
+                <div class="form-group">
+                    <label for="ruser">Choose Username</label>
+                    <input id="ruser" type="text" placeholder="e.g. AuctionMaster" required>
+                </div>
+                <div class="form-group">
+                    <label for="rpass">Create Password</label>
+                    <input id="rpass" type="password" placeholder="Min. 8 characters" required>
+                </div>
+                <div class="form-group">
+                    <label for="role">Account Type</label>
+                    <select id="role" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="admin">Admin (Seller)</option>
+                        <option value="bidder">Bidder (Buyer)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-secondary">Register</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AuctionSphere System</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
